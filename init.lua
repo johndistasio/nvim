@@ -979,6 +979,23 @@ require('lazy').setup({
       vim.cmd.colorscheme 'sherbet'
     end,
   },
+
+  {
+    'stevearc/oil.nvim',
+    lazy = false,
+    config = function()
+      require('oil').setup {
+        -- only allow name editing
+        constrain_cursor = 'name',
+        view_options = {
+          show_hidden = true,
+        },
+      }
+
+      vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
+    end,
+  },
+
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
