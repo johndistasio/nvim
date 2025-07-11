@@ -978,7 +978,15 @@ require('lazy').setup({
       vim.g.sherbet_italic_loops = true
       vim.g.sherbet_italic_conditionals = true
 
-      vim.cmd.colorscheme 'sherbet'
+      --vim.cmd.colorscheme 'sherbet'
+    end,
+  },
+
+  {
+    'savq/melange-nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      vim.cmd.colorscheme 'melange'
     end,
   },
 
