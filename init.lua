@@ -946,7 +946,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -985,8 +985,19 @@ require('lazy').setup({
   {
     'savq/melange-nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+  },
+
+  {
+    'Mofiqul/vscode.nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+  },
+
+  {
+    'rockyzhang24/arctic.nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    dependencies = { 'rktjmp/lush.nvim' },
     config = function()
-      vim.cmd.colorscheme 'melange'
+      vim.cmd.colorscheme 'arctic'
     end,
   },
 
