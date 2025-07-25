@@ -971,14 +971,11 @@ require('lazy').setup({
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       require('sherbet').setup()
-
       vim.g.sherbet_italic_keywords = true
       vim.g.sherbet_italic_functions = false
       vim.g.sherbet_italic_comments = true
       vim.g.sherbet_italic_loops = true
       vim.g.sherbet_italic_conditionals = true
-
-      --vim.cmd.colorscheme 'sherbet'
     end,
   },
 
@@ -996,9 +993,6 @@ require('lazy').setup({
     'rockyzhang24/arctic.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     dependencies = { 'rktjmp/lush.nvim' },
-    config = function()
-      vim.cmd.colorscheme 'arctic'
-    end,
   },
 
   {
@@ -1064,6 +1058,8 @@ require('lazy').setup({
     },
   },
 })
+
+vim.cmd.colorscheme 'arctic'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
