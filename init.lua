@@ -21,6 +21,9 @@ end)
 -- Show line numbers by default.
 vim.o.number =  true
 
+-- Don't show the mode (we expect a statusbar plugin to do this).
+vim.o.showmode = false
+
 -- Enable mouse mode for resizing splits and selecting buffers with the mouse.
 -- 'a' means all modes here.
 vim.o.mouse = 'a'
@@ -75,7 +78,6 @@ vim.o.expandtab = true
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
