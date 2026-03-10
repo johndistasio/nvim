@@ -106,3 +106,5 @@ require("lazy").setup({
 
 vim.cmd.colorscheme 'ayu-mirage'
 
+require("config.django")
+
