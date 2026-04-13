@@ -18,7 +18,7 @@ vim.schedule(function()
 end)
 
 -- Show line numbers by default.
-vim.o.number =  true
+vim.o.number = true
 
 -- Don't show the mode (we expect a statusbar plugin to do this).
 vim.o.showmode = false
@@ -29,8 +29,7 @@ vim.o.mouse = 'a'
 
 -- From :help breakindent:
 -- Every wrapped line will continue visually indented (same amount of
--- space as the beginning of that line), thus preserving horizontal blocks
--- of text.
+-- space as the beginning of that line), thus preserving horizontal blocks of text.
 vim.o.breakindent = true
 
 -- Save undo history.
@@ -55,7 +54,7 @@ vim.o.splitright = true
 -- Open horizontal splits below the current window.
 vim.o.splitbelow = true
 
--- Show which line your cursor is on.
+-- Show which line the cursor is on.
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
@@ -75,19 +74,28 @@ vim.o.shiftwidth = 0
 -- Insert spaces instead of tabs.
 vim.o.expandtab = true
 
+-- Set rounded borders on popup windows so they're easier to read.
+vim.o.winborder = 'rounded'
+
+-- Disable providers for plugins in other languages.
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+    local out = vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
-            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
-            { "\nPress any key to exit..." },
+            { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
+            { out, 'WarningMsg' },
+            { '\nPress any key to exit...' },
         }, true, {})
         vim.fn.getchar()
         os.exit(1)
@@ -96,16 +104,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup({
+require('lazy').setup({
     spec = {
         -- import your plugins
-        { import = "plugins" },
+        { import = 'plugins' },
     },
     -- Don't automatically check for plugin updates.
     checker = { enabled = false },
 })
 
-vim.cmd.colorscheme 'ayu-mirage'
+vim.cmd.colorscheme('boo-berry')
 
-require("config.django")
-
+require('config.django')
