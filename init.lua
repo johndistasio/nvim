@@ -88,7 +88,7 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 -- Set indentation level to close folds by default.
-vim.opt.foldlevel = 4
+vim.opt.foldlevel = 10
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
