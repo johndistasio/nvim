@@ -149,6 +149,6 @@ require('lazy').setup({
     checker = { enabled = false },
 })
 
-vim.cmd.colorscheme('boo-berry')
-
 require('config.django')
+
+vim.cmd.colorscheme('boo-berry')
