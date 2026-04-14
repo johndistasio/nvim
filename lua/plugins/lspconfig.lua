@@ -5,7 +5,10 @@ local lsp_attach_group = vim.api.nvim_create_augroup('lsp-attach', { clear = tru
 local function setup_completion_on_attach(client, bufnr)
     -- Source: https://neovim.io/doc/user/lsp/#lsp-attach
     -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-    local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+    local chars = {}
+    for i = 32, 126 do
+        table.insert(chars, string.char(i))
+    end
     client.server_capabilities.completionProvider.triggerCharacters = chars
 
     -- Enable built-in completion.
@@ -46,8 +49,9 @@ return {
         local servers = {
             clangd = {},
             lua_ls = {},
-            ts_ls = {},
+            rust_analyzer = {},
             stylua = {},
+            ts_ls = {},
         }
 
         for server, config in pairs(servers) do

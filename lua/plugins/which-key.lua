@@ -38,7 +38,6 @@ return {
         },
         -- run :checkhealth which-key to check for conflicts if we're going to be managing keybinds across multiple files
         spec = {
-            { '<leader>f', group = '[F]ind' },
             { '<leader>s', group = '[S]earch' },
         },
     },

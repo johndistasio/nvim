@@ -3,9 +3,11 @@ return {
     lazy = false,
     config = function()
         require('oil').setup({
-            -- only allow name editing
+            -- Only allow name editing.
             constrain_cursor = 'name',
+
             view_options = {
+                -- Show hidden files.
                 show_hidden = true,
             },
         })
