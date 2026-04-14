@@ -14,7 +14,7 @@ vim.g.editorconfig = true
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = 'unnamedplus'
 end)
 
 -- Show line numbers by default.
@@ -85,6 +85,35 @@ vim.g.loaded_ruby_provider = 0
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Configure diagnostics.
+-- https://neovim.io/doc/user/diagnostic/#vim.diagnostic.Opts
+vim.diagnostic.config({
+
+    -- TODO
+    update_in_insert = false,
+
+    -- Sort diagnostics by severity. Higher severities are displayed first.
+    severity_sort = true,
+
+    -- Floating window options.
+    -- https://neovim.io/doc/user/diagnostic/#vim.diagnostic.Opts.Float
+    float = {
+        -- TODO
+        border = 'rounded',
+        -- TODO
+        source = 'if_many'
+    },
+
+    -- TODO
+    underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+    -- TODO
+    virtual_lines = true,
+
+    -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+    jump = { float = true },
+})
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
