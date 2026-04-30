@@ -1,10 +1,14 @@
 return {
-    'nvim-mini/mini.statusline',
+    {
+        'nvim-mini/mini.statusline',
 
-    -- Use 'main' version as recommended per the documentation.
-    version = false,
+        -- Use 'main' version as recommended per the documentation.
+        version = false,
 
-    config = function()
-        require('mini.statusline').setup({ use_icons = false })
-    end,
+        config = function()
+            require('mini.statusline').setup({ use_icons = false })
+        end,
+    },
+
+    -- add other mini plugins here, maybe
 }

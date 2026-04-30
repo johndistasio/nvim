@@ -32,7 +32,7 @@ return {
             callback = function(event)
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
 
-                if client:supports_method('textDocument/completion') then
+                if client and client:supports_method('textDocument/completion') then
                     setup_completion_on_attach(client, event.buf)
                 end
             end,

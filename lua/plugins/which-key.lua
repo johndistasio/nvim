@@ -38,7 +38,8 @@ return {
         },
         -- run :checkhealth which-key to check for conflicts if we're going to be managing keybinds across multiple files
         spec = {
-            { '<leader>s', group = '[S]earch' },
+            -- These are set in Telescope setup.
+            { '<leader>s', group = '[s]earch' },
         },
     },
 }

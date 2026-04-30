@@ -1,4 +1,4 @@
---s Set <space> as the global leader key.
+-- Set <space> as the global leader key.
 vim.g.mapleader = ' '
 
 -- Set <space> as the buffer-local leader key.
@@ -109,7 +109,7 @@ vim.diagnostic.config({
         -- TODO
         border = 'rounded',
         -- TODO
-        source = 'if_many'
+        source = 'if_many',
     },
 
     -- TODO
@@ -149,6 +149,6 @@ require('lazy').setup({
     checker = { enabled = false },
 })
 
-require('config.django')
-
 vim.cmd.colorscheme('boo-berry')
+
+require('config.django')
