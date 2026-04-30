@@ -17,9 +17,10 @@ return {
     opts = {
         -- Define your formatters
         formatters_by_ft = {
+            cpp = { 'clang-format' },
             lua = { 'stylua' },
-            python = { 'isort', 'black' },
-            javascript = { 'prettierd', 'prettier', stop_after_first = true },
+            javascript = { 'biome', stop_at_first = true },
+            typescript = { 'biome', stop_at_first = true },
         },
         -- Set default options
         default_format_opts = {
