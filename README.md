@@ -12,8 +12,6 @@ Neovim configuration based on kickstart.nvim.
 
 ## TODO
 
-- figure out codelens + inlay hints
-- figure out a good surround setup.
 - figure out how to set up work-specific overrides for formatting
 - Document useful keybinds here.
 - Document overall configuration strategy

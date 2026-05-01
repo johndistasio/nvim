@@ -36,6 +36,9 @@ return {
                 if client and client:supports_method('textDocument/completion') then
                     setup_completion_on_attach(client, event.buf)
                 end
+
+                -- Enable inlay hints for available codelenses and references.
+                vim.lsp.codelens.enable(true, { bufnr = event.buf })
             end,
         })
 
@@ -49,6 +52,7 @@ return {
 
         local servers = {
             clangd = {},
+            gopls = {},
             lua_ls = {},
             rust_analyzer = {},
             stylua = {},
