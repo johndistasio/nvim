@@ -1,3 +1,4 @@
+-- TODO: describe me
 vim.opt.completeopt = { 'menuone', 'noselect', 'popup', 'preview', 'fuzzy' }
 
 local lsp_attach_group = vim.api.nvim_create_augroup('lsp-attach', { clear = true })

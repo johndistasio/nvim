@@ -2,7 +2,8 @@ return {
     'folke/which-key.nvim',
     event = 'VimEnter',
     opts = {
-        delay = 0,
+        preset = 'modern',
+        delay = 0, -- TODO: increase this delay
         icons = {
             mappings = false,
             keys = {
@@ -35,11 +36,6 @@ return {
                 F11 = '<F11>',
                 F12 = '<F12>',
             },
-        },
-        -- run :checkhealth which-key to check for conflicts if we're going to be managing keybinds across multiple files
-        spec = {
-            -- These are set in Telescope setup.
-            { '<leader>s', group = '[s]earch' },
         },
     },
 }

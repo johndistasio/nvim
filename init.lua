@@ -151,4 +151,45 @@ require('lazy').setup({
 
 vim.cmd.colorscheme('boo-berry')
 
+--
+-- keymaps
+--
+
+local map = function(keys, func, desc, mode)
+    mode = mode or 'n'
+    vim.keymap.set(mode, keys, func, { desc = desc })
+end
+
+local wk = require('which-key')
+local builtin = require('telescope.builtin')
+
+map('<leader><leader>', builtin.buffers, 'Find buffers')
+
+wk.add({ '<leader>s', group = 'Search' })
+map('<leader>sf', builtin.find_files, 'Search files')
+map('<leader>sg', builtin.live_grep, 'Search live grep')
+map('<leader>sw', builtin.grep_string, 'Search current word')
+map('<leader>sh', builtin.help_tags, 'Search help')
+map('<leader>st', '<cmd>TodoTelescope<cr>', 'Search TODOs')
+map('<leader>sT', builtin.builtin, 'Search Telescope')
+map('<leader>sd', builtin.diagnostics, 'Search diagnostics')
+map('<leader>s.', builtin.oldfiles, 'Search Recent Files ("." for repeat)')
+
+-- Override some default keymaps with Telescope versions.
+wk.add({ 'gr', group = 'LSP' })
+map('grn', vim.lsp.buf.rename, 'Rename')
+map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
+map('grr', builtin.lsp_references, 'Goto References')
+map('gri', builtin.lsp_implementations, 'Goto Implementation')
+map('grd', builtin.lsp_definitions, 'Goto Definition')
+map('grD', vim.lsp.buf.declaration, 'Goto Declaration')
+map('grt', builtin.lsp_type_definitions, 'Goto Type Definition')
+map('grx', vim.lsp.codelens.run, 'Run Codelens at Line')
+map('gro', builtin.lsp_document_symbols, 'Open Document Symbols')
+map('grw', builtin.lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+
+--
+-- other configuration
+--
+
 require('config.django')

@@ -1,5 +1,6 @@
-local function colorscheme(scheme)
-    return { scheme, lazy = false, priority = 1000 }
+local function colorscheme(scheme, deps)
+    deps = deps or {}
+    return { scheme, lazy = false, priority = 1000, dependencies = deps }
 end
 
 return {
