@@ -5,10 +5,27 @@ end
 
 return {
     colorscheme('booberrytheme/boo-berry.nvim'),
-    colorscheme('e-ink-colorscheme/e-ink.nvim'),
-    colorscheme('NTBBloodbath/doom-one.nvim'),
-    colorscheme('olivercederborg/poimandres.nvim'),
+    colorscheme('johndistasio/sherbet.nvim'),
+    colorscheme('sainnhe/everforest'),
     colorscheme('savq/melange-nvim'),
     colorscheme('Shatur/neovim-ayu'),
-    colorscheme('xiantang/darcula-dark.nvim'),
+    {
+        'e-ink-colorscheme/e-ink.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- Customizations must happen after the colorscheme is loaded.
+            vim.api.nvim_create_autocmd('Colorscheme', {
+                pattern = 'e-ink',
+                callback = function()
+                    require('e-ink').setup()
+                    local hl = vim.api.nvim_set_hl
+                    local everforest = require('e-ink.palette').everforest()
+
+                    -- TODO: replace with customizations i want long term
+                    hl(0, 'Comment', { fg = everforest.green })
+                end,
+            })
+        end,
+    },
 }

@@ -12,6 +12,7 @@ Neovim configuration based on kickstart.nvim.
 
 ## TODO
 
+- customize e-ink colorscheme
 - figure out how to set up work-specific overrides for formatting
 - Document useful keybinds here.
 - Document overall configuration strategy
