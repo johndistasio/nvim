@@ -37,7 +37,10 @@ return {
             { '<leader>sg', builtin.live_grep, desc = 'Search live grep' },
             { '<leader>sw', builtin.grep_string, desc = 'Search current word' },
             { '<leader>sh', builtin.help_tags, desc = 'Search help' },
+
+            -- The search here is driven by rg; add an .rgignore file to exclude things like vendored dependencies.
             { '<leader>st', '<cmd>TodoTelescope<cr>', desc = 'Search TODOs' },
+
             { '<leader>sT', builtin.builtin, desc = 'Search Telescope' },
             { '<leader>sd', builtin.diagnostics, desc = 'Search diagnostics' },
             { '<leader>s.', builtin.oldfiles, desc = 'Search Recent Files ("." for repeat},' },
