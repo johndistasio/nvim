@@ -149,6 +149,7 @@ require('lazy').setup({
     checker = { enabled = false },
 })
 
+-- Set the colorscheme.
 vim.cmd.colorscheme('dusk')
 
 --
