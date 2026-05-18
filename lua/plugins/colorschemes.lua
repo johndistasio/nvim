@@ -5,6 +5,8 @@ end
 
 return {
     colorscheme('booberrytheme/boo-berry.nvim'),
+    colorscheme('ember-theme/nvim'),
+    colorscheme('fdemb/dusk.nvim'),
     colorscheme('johndistasio/sherbet.nvim'),
     colorscheme('sainnhe/everforest'),
     colorscheme('savq/melange-nvim'),

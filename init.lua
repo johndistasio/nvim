@@ -149,7 +149,7 @@ require('lazy').setup({
     checker = { enabled = false },
 })
 
-vim.cmd.colorscheme('boo-berry')
+vim.cmd.colorscheme('dusk')
 
 --
 -- keymaps
