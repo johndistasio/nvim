@@ -10,9 +10,3 @@ Neovim configuration based on kickstart.nvim.
 `cc` - delete contents of line and enter insert mode
 `gcc` - toggle comments on line(s)
 
-## TODO
-
-- customize e-ink colorscheme
-- figure out how to set up work-specific overrides for formatting
-- Document useful keybinds here.
-- Document overall configuration strategy
