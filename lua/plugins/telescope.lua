@@ -24,5 +24,23 @@ return {
         -- Activate extensions. This must happen after the setup function.
         require('telescope').load_extension('fzf')
         require('telescope').load_extension('ui-select')
+
+        -- Set keymaps.
+        local wk = require('which-key')
+        local builtin = require('telescope.builtin')
+
+        wk.add({ '<leader><leader>', builtin.buffers, desc = 'Find buffers' })
+
+        wk.add({
+            { '<leader>s', group = 'Search' },
+            { '<leader>sf', builtin.find_files, desc = 'Search files' },
+            { '<leader>sg', builtin.live_grep, desc = 'Search live grep' },
+            { '<leader>sw', builtin.grep_string, desc = 'Search current word' },
+            { '<leader>sh', builtin.help_tags, desc = 'Search help' },
+            { '<leader>st', '<cmd>TodoTelescope<cr>', desc = 'Search TODOs' },
+            { '<leader>sT', builtin.builtin, desc = 'Search Telescope' },
+            { '<leader>sd', builtin.diagnostics, desc = 'Search diagnostics' },
+            { '<leader>s.', builtin.oldfiles, desc = 'Search Recent Files ("." for repeat},' },
+        })
     end,
 }

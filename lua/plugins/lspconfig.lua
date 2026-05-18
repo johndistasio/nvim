@@ -39,6 +39,24 @@ return {
 
                 -- Enable inlay hints for available codelenses and references.
                 vim.lsp.codelens.enable(true, { bufnr = event.buf })
+
+                -- Override some default keymaps with Telescope versions.
+                local wk = require('which-key')
+                local builtin = require('telescope.builtin')
+
+                wk.add({
+                    { 'gr', group = 'LSP' },
+                    { 'grn', vim.lsp.buf.rename, desc = 'Rename' },
+                    { 'gra', vim.lsp.buf.code_action, desc = 'Goto Code Action', mode = { 'n', 'x' } },
+                    { 'grr', builtin.lsp_references, desc = 'Goto References' },
+                    { 'gri', builtin.lsp_implementations, desc = 'Goto Implementation' },
+                    { 'grd', builtin.lsp_definitions, desc = 'Goto Definition' },
+                    { 'grD', vim.lsp.buf.declaration, desc = 'Goto Declaration' },
+                    { 'grt', builtin.lsp_type_definitions, desc = 'Goto Type Definition' },
+                    { 'grx', vim.lsp.codelens.run, desc = 'Run Codelens at Line' },
+                    { 'gro', builtin.lsp_document_symbols, desc = 'Open Document Symbols' },
+                    { 'grw', builtin.lsp_dynamic_workspace_symbols, desc = 'Open Workspace Symbols' },
+                })
             end,
         })
 
