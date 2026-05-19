@@ -19,8 +19,9 @@ return {
         formatters_by_ft = {
             cpp = { 'clang-format' },
             lua = { 'stylua' },
-            javascript = { 'biome', stop_at_first = true },
-            typescript = { 'biome', stop_at_first = true },
+            javascript = { 'biome', stop_after_first = true },
+            terraform = { 'terraform_fmt' },
+            typescript = { 'biome', stop_after_first = true },
         },
         -- Set default options
         default_format_opts = {
