@@ -29,9 +29,15 @@ return {
         local wk = require('which-key')
         local builtin = require('telescope.builtin')
 
-        wk.add({ '<leader><leader>', builtin.buffers, desc = 'Find buffers' })
-
         wk.add({
+            { '<leader><leader>', builtin.buffers, desc = 'Find buffers' },
+            {
+                '<leader>k',
+                function()
+                    vim.diagnostic.open_float(nil, { scope = 'cursor', border = 'rounded' })
+                end,
+                desc = 'Show diagnostics under cursor',
+            },
             { '<leader>s', group = 'Search' },
             { '<leader>sf', builtin.find_files, desc = 'Search files' },
             { '<leader>sg', builtin.live_grep, desc = 'Search live grep' },
@@ -42,7 +48,14 @@ return {
             { '<leader>st', '<cmd>TodoTelescope<cr>', desc = 'Search TODOs' },
 
             { '<leader>sT', builtin.builtin, desc = 'Search Telescope' },
-            { '<leader>sd', builtin.diagnostics, desc = 'Search diagnostics' },
+            {
+                '<leader>sd',
+                function()
+                    builtin.diagnostics({ bufnr = 0 })
+                end,
+                desc = 'Search buffer diagnostics',
+            },
+            { '<leader>sD', builtin.diagnostics, desc = 'Search diagnostics' },
             { '<leader>s.', builtin.oldfiles, desc = 'Search Recent Files ("." for repeat},' },
         })
     end,

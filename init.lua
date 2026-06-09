@@ -112,11 +112,11 @@ vim.diagnostic.config({
         source = 'if_many',
     },
 
-    -- TODO
-    underline = { severity = { min = vim.diagnostic.severity.WARN } },
+    -- Show underlines for every diagnostic.
+    underline = true,
 
-    -- TODO
-    virtual_lines = true,
+    -- Don't show diagnostics in-line with code.
+    virtual_lines = false,
 
     -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
     jump = { float = true },
