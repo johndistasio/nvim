@@ -1,5 +1,18 @@
--- TODO: describe me
-vim.opt.completeopt = { 'menuone', 'noselect', 'popup', 'preview', 'fuzzy' }
+-- Configure insert mode completion.
+vim.opt.completeopt = {
+    -- Enable fuzzy matching for completion candidates.
+    'fuzzy',
+
+    -- Show the popup menu of completion candidates even if there is only one candidate.
+    'menuone',
+
+    -- Do not insert a match until we select one, and don't pre-select one either.
+    'noselect',
+
+    -- Show extra information about the selected completion candidate in a popup
+    -- window next to the selection.
+    'popup',
+}
 
 local lsp_attach_group = vim.api.nvim_create_augroup('lsp-attach', { clear = true })
 

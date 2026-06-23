@@ -97,7 +97,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- https://neovim.io/doc/user/diagnostic/#vim.diagnostic.Opts
 vim.diagnostic.config({
 
-    -- TODO
+    -- Don't update diagnostics until after we've left insert mode.
     update_in_insert = false,
 
     -- Sort diagnostics by severity. Higher severities are displayed first.
@@ -106,9 +106,10 @@ vim.diagnostic.config({
     -- Floating window options.
     -- https://neovim.io/doc/user/diagnostic/#vim.diagnostic.Opts.Float
     float = {
-        -- TODO
+        -- Use rounded corners on floating window border.
         border = 'rounded',
-        -- TODO
+
+        -- Show diagnostic source only if the buffer has multiple diagnostics in it.
         source = 'if_many',
     },
 
