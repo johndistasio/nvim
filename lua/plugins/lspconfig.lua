@@ -87,6 +87,11 @@ return {
             lua_ls = {},
             rust_analyzer = {},
             stylua = {},
+            tofu_ls = {
+                cmd = { 'tofu-ls', 'serve' },
+                filetypes = { 'terraform', 'terraform-vars' },
+                root_markers = { '.terraform', '.git' },
+            },
             ts_ls = {},
         }
 

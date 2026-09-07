@@ -5,6 +5,7 @@ end
 
 return {
     colorscheme('booberrytheme/boo-berry.nvim'),
+    colorscheme('DeviusVim/deviuspro.nvim'),
     colorscheme('ember-theme/nvim'),
     colorscheme('fdemb/dusk.nvim'),
     colorscheme('johndistasio/sherbet.nvim'),
