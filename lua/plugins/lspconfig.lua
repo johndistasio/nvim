@@ -92,7 +92,7 @@ return {
                 filetypes = { 'terraform', 'terraform-vars' },
                 root_markers = { '.terraform', '.git' },
             },
-            ts_ls = {},
+            tsc = {},
         }
 
         for server, config in pairs(servers) do
