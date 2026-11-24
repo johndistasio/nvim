@@ -4,14 +4,24 @@ local function colorscheme(scheme, deps)
 end
 
 return {
+    colorscheme('Mofiqul/adwaita.nvim'),
+    colorscheme('FrenzyExists/aquarium-vim'),
+    colorscheme('ficcdaf/ashen.nvim'),
     colorscheme('booberrytheme/boo-berry.nvim'),
+    colorscheme('zitrocode/carvion.nvim'),
+    colorscheme('Aejkatappaja/cendre'),
     colorscheme('DeviusVim/deviuspro.nvim'),
-    colorscheme('ember-theme/nvim'),
     colorscheme('fdemb/dusk.nvim'),
-    colorscheme('johndistasio/sherbet.nvim'),
+    colorscheme('ember-theme/nvim'),
     colorscheme('sainnhe/everforest'),
+    colorscheme('xiantang/darcula-dark.nvim'),
     colorscheme('savq/melange-nvim'),
+    colorscheme('xero/miasma.nvim'),
     colorscheme('Shatur/neovim-ayu'),
+    colorscheme('Yazeed1s/oh-lucy.nvim'),
+    colorscheme('kvrohit/rasmus.nvim'),
+    colorscheme('johndistasio/sherbet.nvim'),
+    colorscheme('rezniqov/soviet.nvim'),
     {
         'e-ink-colorscheme/e-ink.nvim',
         lazy = false,
