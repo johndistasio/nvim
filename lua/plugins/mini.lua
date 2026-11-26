@@ -10,5 +10,12 @@ return {
         end,
     },
 
-    -- add other mini plugins here, maybe
+    {
+        'nvim-mini/mini.icons',
+
+        -- Use 'main' version as recommended per the documentation.
+        version = false,
+
+        opts = {},
+    },
 }

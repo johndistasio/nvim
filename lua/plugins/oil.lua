@@ -3,6 +3,9 @@ return {
     lazy = false,
     config = function()
         require('oil').setup({
+            -- Don't show icons.
+            columns = {},
+
             -- Only allow name editing.
             constrain_cursor = 'name',
 
